@@ -1,0 +1,18 @@
+PL/sql Function return a value so while calling this pl/sql function ffrom JDBC application wew  prepare a query having parameter to catch retrrurn value and this parameter should be treated as OUT paramenter and should be register with JDBC data types.
+
+PL/SQL Function din Oracle :
+===============================
+create or replace function test-func (no in number, desg out varchar) return number as bsal(var) Number.
+begin 
+select job,sal into desg,bsal from emp where empno. = no.;
+return bsal;
+end;
+/
+local var  
+-pl/SQl function return a value.
+-pl/sql procedure should not return a value.
+-procedure gives multiple result as out or in out params.
+-where as function  gives multiple result as below.
+	1. give on result value.
+	2. gives reaming through OUt in IN out prams.
+	3. 

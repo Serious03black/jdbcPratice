@@ -1,0 +1,18 @@
+industry reccomend to never hard code the value like url and connection line that chagne in future
+
+the solution for the above peroblem is use properties(.prop or .txt)
+eg application to configure the jdbc releted dbreleted inforrmation i properties file using in java jdbc app 
+-------------------------------------------------------------------------------
+eg
+                                        |
+                                        |------------propex
+                                                        |
+                                                        |----dbprops.txt
+                                                        |----selectTest.java
+
+#jdbc driver & database reletd table details
+mydriver=org.postgresql.Driver
+url=jdbc:postgresql://localhost:5432/mydb
+user=root
+pwd=tiger
+qry=select*form student;

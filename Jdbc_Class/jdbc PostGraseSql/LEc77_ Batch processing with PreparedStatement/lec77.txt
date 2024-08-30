@@ -1,0 +1,19 @@
+ Batch processing with PreparedStatement ::
+
+--simple statement releted batch processing allows us to keep quries in batch
+Simple Statement related batch processing allows us to keep queries in batch
+
+—— PreparedStatement related batch processing does not allow to keep
+queries in batch but allows to keep multiple set of query
+values/parameters in batch. (Using PreparedStatement object batch
+processing is possible on set of parameter values belonging to a query).
+
+Connection sucessfully........!
+Record insertion is:1
+456	sameer	    Parali
+
+Connection sucessfully........!
+Record insertion is:3
+456	sameer	    Parali
+456	Prathmesh	nashik
+456	sakhi	    bombay

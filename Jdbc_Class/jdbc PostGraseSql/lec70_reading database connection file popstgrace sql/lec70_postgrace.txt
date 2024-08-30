@@ -16,3 +16,13 @@ url=jdbc:postgresql://localhost:5432/mydb
 user=root
 pwd=tiger
 qry=select*form student;
+closte the connection
+
+
+Avoid Hardcoding Values: Instead of hardcoding database connection details, store them in a properties file (e.g., db.properties).
+Load Properties File: Use FileInputStream to load the properties file in your Java application.
+Create and Load Properties Object: Use java.util.Properties to load and access the data from the properties file.
+Retrieve Property Values: Retrieve the JDBC configuration values (driver, URL, username, password, and query) using the getProperty method from the Properties object.
+Establish JDBC Connection: Use the retrieved values to establish a connection to the database using DriverManager.
+Perform Database Operations: Create a Statement object to execute SQL queries and process the results.
+Handle Resources Properly: Ensure proper closing of database resources (e.g., ResultSet, Statement, Connection) after operations are completed.

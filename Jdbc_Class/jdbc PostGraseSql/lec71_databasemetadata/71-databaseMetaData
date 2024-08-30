@@ -1,0 +1,50 @@
+###   Advanced Java Tutorial: DatabaseMetaData in JDBC  
+
+  1. Overview of Database Metadata:  
+   - Definition: Metadata refers to "data about the data." In the context of databases, it includes details like table names, database versions, views, triggers, and more.
+   - Purpose: Used to retrieve information about the database structure, such as database name, version, table details, etc.
+
+  2. Types of Metadata in JDBC:  
+   -   DatabaseMetaData  : Retrieves information about the database itself, such as its capabilities, limitations, name, version, and other characteristics.
+   -   ResultSetMetaData  : Provides information about the result set, like column names, data types, etc.
+   -   ParameterMetaData  : Gives details about the parameters in a PreparedStatement, such as their types and modes.
+
+  3. Working with DatabaseMetaData:  
+   -   Object Creation  : `DatabaseMetaData dbmd = connection.getMetaData();
+   -   Common Methods  :
+     -   getDatabaseProductName()  : Retrieves the name of the database.
+     -   getDatabaseProductVersion()  : Retrieves the version of the database.
+     -   getDriverVersion()  : Retrieves the version of the JDBC driver.
+     -   getSQLKeywords()  : Retrieves a list of SQL keywords supported by the database.
+     -   getNumericFunctions()  : Retrieves a list of numeric functions supported by the database.
+     -   getStringFunctions()  : Retrieves a list of string functions supported by the database.
+     -   getSystemFunctions()  : Retrieves a list of system functions supported by the database.
+     -   getSearchStringEscape()  : Retrieves the escape character(s) used in the database.
+     -   supportsStoredProcedures()  : Checks if the database supports stored procedures.
+     -   getMaxRowSize()  : Retrieves the maximum number of rows supported by the database.
+     -   getMaxStatementLength()  : Retrieves the maximum length of an SQL statement.
+     -   getMaxTablesInSelect()  : Retrieves the maximum number of tables allowed in a `SELECT` query.
+     -   getMaxTableNameLength()  : Retrieves the maximum length of a table name.
+     -   getJDBCMajorVersion()  : Retrieves the major version of the JDBC API.
+     -   getJDBCMinorVersion()  : Retrieves the minor version of the JDBC API.
+
+  4. Example Java Program:  
+   -   Setup  : Load the driver, create a connection, and retrieve metadata.
+   -   Implementation  :
+     - Load the driver using `Class.forName()`.
+     - Establish a connection using `DriverManager.getConnection()`.
+     - Retrieve the `DatabaseMetaData` object.
+     - Use various methods to print out the database metadata.
+
+  5. Common Errors and Fixes:  
+   -   Spelling Mistakes  : Commonly encountered errors due to typos in method names (e.g., `getDatabaseProductName` misspelled as `getDatabaseProuctName`).
+   -   Path and Classpath Issues  : Ensure the correct setting of paths and classpaths, especially when compiling and running Java programs.
+
+  6. Practical Use Cases:  
+   -   GUI Tools Development  : Database metadata is particularly useful in developing GUI tools for database management, such as SQL Yoke for MySQL.
+   -   Database Compatibility Checks  : Helps in checking the compatibility of different databases and drivers in JDBC applications.
+
+  7. Conclusion:  
+   - Database metadata programming in JDBC is a powerful feature that allows developers to dynamically interact with the database's structure and capabilities, making it a crucial tool in advanced Java development.
+
+  Note  : The tutorial emphasizes the self-descriptive nature of the methods in the `DatabaseMetaData` interface, making it easier to understand what each method does based on its name.

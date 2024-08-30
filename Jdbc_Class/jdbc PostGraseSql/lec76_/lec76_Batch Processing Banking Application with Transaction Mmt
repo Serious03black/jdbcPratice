@@ -1,0 +1,76 @@
+## Advanced Java JDBC Tutorial : adv java :Java JDBC application to perform transfer money operation between two different accounts of same banks by using the batch processing with Transaction Management Effects Java Database Connectivity ##
+
+### JDBC Batch Processing with PreparedStatement
+
+1.     Batch Processing with PreparedStatement:    
+   - PreparedStatement queries are pre-compiled SQL queries.
+   - The query is sent to the database only once but can be executed multiple times with different values.
+   - This reduces the number of network round trips between the Java application and the database.
+
+2.     Setting Up JDBC Connection:    
+   - Import `java.sql.  `.
+   - Use `Class.forName` to load the Oracle JDBC driver.
+   - Establish a connection using `DriverManager.getConnection`.
+
+3.     Creating and Using PreparedStatement:    
+   - Create a `PreparedStatement` object to insert values into the "student" table.
+   - Use parameterized queries with `setInt`, `setString`, etc., to set values dynamically.
+
+4.     Adding Batches:    
+   - Use `ps.addBatch()` to add multiple sets of parameter values to the batch.
+   - Example:
+     - Batch 1: `ps.setInt(1, 456); ps.setString(2, "Shreya"); ps.setString(3, "Parli");`
+     - Batch 2: `ps.setInt(1, 765); ps.setString(2, "Sameer"); ps.setString(3, "Mumbai");`
+     - Batch 3: `ps.setInt(1, 6666); ps.setString(2, "Swathi"); ps.setString(3, "Lathur");`
+
+5.     Executing the Batch:    
+   - Execute all the batches using `ps.executeBatch()`.
+   - Capture the number of records affected using an integer array returned by `executeBatch()`.
+
+6.     Handling the Results:    
+   - Iterate through the results to count the number of records affected.
+   - Print the count of records inserted.
+
+7.     Closing Resources:    
+   - Close the `PreparedStatement` and `Connection` objects after execution.
+
+8.     Example Execution:    
+   - Compile and run the Java program.
+   - Verify the records in the "student" table by using a `SELECT` query.
+
+9.     Comparison: Simple Statement vs. PreparedStatement:    
+   - Simple Statement: Allows multiple queries in a batch (e.g., `INSERT`, `UPDATE`, `DELETE`).
+   - PreparedStatement: Allows multiple sets of parameter values for a single query in a batch.
+   - PreparedStatement is more efficient for executing the same query multiple times with different parameters.
+
+
+   Batch Processing Overview:
+
+Batch processing involves sending multiple queries to the database in a single batch rather than individually. This reduces network round trips, enhancing efficiency.
+By combining queries into a single unit and executing them together, you apply the "do everything or do nothing" principle, also known as transaction management.
+Transaction Management in Banking Application:
+
+Transaction management ensures that either all operations (withdraw and deposit) are executed correctly, or none of them are. This is essential in a banking application where, for example, transferring money involves withdrawing from one account and depositing it into another.
+Example Scenario: Implementing a transfer money operation between two accounts within the same bank using batch processing.
+Creating a Table in SQL:
+
+A table named account is created with columns account_id, holder (account holder's name), and balance.
+Sample SQL commands are used to insert values into the account table for demonstration.
+Java Implementation:
+
+The tutorial then demonstrates creating a Java application to handle the banking transaction with batch processing.
+Key steps include:
+Creating a JDBC connection and disabling auto-commit to manage transactions manually.
+Using SQL queries to withdraw from the source account and deposit into the destination account.
+Adding these queries to a batch.
+Executing the batch and handling transaction commit or rollback based on the success of operations.
+Handling Exceptions:
+
+The tutorial addresses handling exceptions like ArrayIndexOutOfBoundsException which might occur during the execution of the batch. The issue may arise from incorrect query parameter settings.
+Batch Processing with PreparedStatement:
+
+PreparedStatement is discussed in relation to batch processing. Unlike simple statements, PreparedStatement allows pre-compiling queries and executing them multiple times with different parameters.
+The limitation of batch processing with PreparedStatement is that it’s challenging to send multiple queries as a batch when each query requires a different set of parameter values.
+Conclusion:
+
+The session ends with a discussion on the nuances of using batch processing with PreparedStatement and the potential need for a follow-up session to delve deeper into the topic.

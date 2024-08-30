@@ -1,0 +1,26 @@
+Limitation with Result set object:
+========================================================
+1.It is not in serilized form
+2.it not support bean style prograemming.
+3.To overocem above limitation /problem use "rowset",given from JDBC 
+
+object become serilizable object only when its clss that implement java.io.serilizable INTERFACE. WE CAN SEND ONLY SERILIZABLE OBJECT OVER THE NETWORK 
+
+
+#rowset:
+====================
+rowset object means its the object of a JDBC driver supplied java classs tha implemets javax.sql,rowsest interface. this rowset is the sub-interfaccce of java.sql.resultset interface.
+
+we have 3 types of rowsets:
+1)cached RowSet:
+            Its a discounted Rowset.
+            Behaviour-wise,its like in-senesitive Reultset object.
+2)jdbc Rowset:
+    its connected Rowset.
+    behaviour-wise,its like sensetive Resuktset object
+3)webset:
+    its connected rowset.
+    Collected the data from xml files.
+
+All Rowset object are serilizalbe object & they supports bean style programming.
+
